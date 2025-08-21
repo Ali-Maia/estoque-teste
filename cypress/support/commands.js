@@ -89,7 +89,7 @@ Cypress.Commands.add('editarProduto', (produto) => {
   cy.get('#submit-button').click();
 });
 
-Cypress.Commands.add('verificarMensagemErro', (mensagem) => {
+Cypress.Commands.add('verificarMensagem', (mensagem) => {
   cy.contains('#form-hint', mensagem).should('be.visible')
 })
 
@@ -104,5 +104,6 @@ Cypress.Commands.add('verificarProduto', (produto) => {
 })
 
 Cypress.Commands.add('excluirProduto', () => {
-  cy.get('.btn-danger').click()
+  cy.get('.row-actions > .btn-danger').click()
+  cy.get('#confirm-delete').click()
 })

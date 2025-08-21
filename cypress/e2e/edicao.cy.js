@@ -56,7 +56,7 @@ describe('Edição de Produtos', () => {
         status: "Disponível"
       }
       cy.editarProduto(produtoEditado)
-      cy.verificarMensagemErro('Preço deve ser um número maior ou igual a zero (R$).')
+      cy.verificarMensagem('Preço deve ser um número maior ou igual a zero (R$).')
       cy.verificarProduto(produtoOriginal)
     })
   })

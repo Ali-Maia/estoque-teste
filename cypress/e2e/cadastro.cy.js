@@ -35,7 +35,7 @@ describe('Cadastro', () => {
       cy.cadastrarProduto(produtoSimples)
     })
 
-    cy.verificarMensagemErro('Campos obrigatórios: Nome, Tipo de filamento, Cores, Dimensões, Descrição.')
+    cy.verificarMensagem('Campos obrigatórios: Nome, Tipo de filamento, Cores, Dimensões, Descrição.')
   });
 
   it('Cadastro de produto com peso menor que zero não deve permitir adicionar produto ao sistema', () => {
@@ -54,7 +54,7 @@ describe('Cadastro', () => {
 
       cy.cadastrarProduto(produtoCompleto)
     })
-    cy.verificarMensagemErro('Peso deve ser um número maior ou igual a zero (g).')
+    cy.verificarMensagem('Peso deve ser um número maior ou igual a zero (g).')
   })
 
   it('Cadastro de produto sem quantidade inicial não deve permitir adicionar produto ao sistema', () => {
@@ -72,7 +72,7 @@ describe('Cadastro', () => {
 
       cy.cadastrarProduto(produtoSemQuantidade)
 
-      cy.verificarMensagemErro('Quantidade deve ser um inteiro maior ou igual a zero.')
+      cy.verificarMensagem('Quantidade deve ser um inteiro maior ou igual a zero.')
     })
   })
 
@@ -114,7 +114,7 @@ describe('Cadastro', () => {
 
       cy.cadastrarProduto(produtoSemQuantidade)
 
-      cy.verificarMensagemErro('Quantidade deve ser um inteiro maior ou igual a zero.')
+      cy.verificarMensagem('Quantidade deve ser um inteiro maior ou igual a zero.')
     })
   })
 
@@ -134,7 +134,7 @@ describe('Cadastro', () => {
 
       cy.cadastrarProduto(produtoSemPreco)
 
-      cy.verificarMensagemErro('Preço deve ser um número maior ou igual a zero (R$).')
+      cy.verificarMensagem('Preço deve ser um número maior ou igual a zero (R$).')
     })
   })
 
@@ -154,7 +154,7 @@ describe('Cadastro', () => {
 
       cy.cadastrarProduto(produtoSemPreco)
 
-      cy.verificarMensagemErro('Preço deve ser um número maior ou igual a zero (R$).')
+      cy.verificarMensagem('Preço deve ser um número maior ou igual a zero (R$).')
     })
   })
 
