@@ -10,6 +10,17 @@
     "quantity": 10,
     "description": "Descrição do produto 01"
   },
+    "valido2": {
+    "name": "Produto 02",
+    "filamentType": "ABS",
+    "colors": "vermelho",
+    "image": "cypress\\fixtures\\img\\chaveiro.webp",
+    "weight": 20,
+    "dimensions": "5 x 2 x 3 cm",
+    "price": "5.75",
+    "quantity": 20,
+    "description": "Descrição do produto 02"
+  },
   "invalido":{
     "name": "",
     "filamentType": "",
