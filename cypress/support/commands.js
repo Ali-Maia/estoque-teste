@@ -107,3 +107,13 @@ Cypress.Commands.add('excluirProduto', () => {
   cy.get('.row-actions > .btn-danger').click()
   cy.get('#confirm-delete').click()
 })
+
+Cypress.Commands.add('comprarProduto', (produto) => {
+  cy.get('.row-actions > .btn-success').click()
+  cy.get('#buy-quantity').click().clear().type(produto.quantidadeComprada)
+  cy.get('#confirm-buy').click()
+
+})
+Cypress.Commands.add('VerificarMensagemModal', (mensagem) =>{
+  cy.contains('#buy-modal-hint', mensagem).should('be.visible')
+})
