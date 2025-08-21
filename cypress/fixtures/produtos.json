@@ -1,0 +1,24 @@
+{
+  "valido": {
+    "name": "Produto 01",
+    "filamentType": "PLA",
+    "colors": "branco, preto",
+    "image": "cypress\\fixtures\\img\\img_1320.webp",
+    "weight": 90,
+    "dimensions": "10 x 8 x 5 cm",
+    "price": "20.50",
+    "quantity": 10,
+    "description": "Descrição do produto 01"
+  },
+  "invalido":{
+    "name": "",
+    "filamentType": "",
+    "colors": "",
+    "image": "",
+    "weight": 90,
+    "dimensions": "",
+    "price": "20.50",
+    "quantity": 10,
+    "description": ""
+  }
+}
