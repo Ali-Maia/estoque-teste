@@ -9,7 +9,6 @@ Cypress.Commands.add('cadastrarProduto', (produto) => {
     cy.get('[name="name"]').click().type(produto.name);
   }
 
-  // A lógica se repete para todos os outros campos
   if (produto.filamentType) {
     cy.get('[name="filamentType"]').click().type(produto.filamentType);
   }
@@ -19,7 +18,7 @@ Cypress.Commands.add('cadastrarProduto', (produto) => {
   }
 
   if (produto.image) {
-    // Para upload de imagem, tratamos um pouco diferente
+ 
     cy.get('[name="image"]').selectFile(produto.image, { force: true });
   }
 
@@ -43,10 +42,19 @@ Cypress.Commands.add('cadastrarProduto', (produto) => {
     cy.get('[name="description"]').click().type(produto.description);
   }
 
-  // Clica no botão de submissão no final
   cy.get('#submit-button').click();
 });
 
 Cypress.Commands.add('verificarMensagemErro', (mensagem) => {
   cy.contains('#form-hint', mensagem).should('be.visible')
+})
+
+Cypress.Commands.add('verificarProduto', (produto) => {
+  if(produto.name){
+    cy.contains(produto.name).should('be.visible')
+  }
+
+  if(produto.status){
+    cy.contains('.status', produto.status).should('be.visible')
+  }
 })
