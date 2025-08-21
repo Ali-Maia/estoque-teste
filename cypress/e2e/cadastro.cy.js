@@ -14,13 +14,13 @@ describe('Cadastro', () => {
         dimensions: produtos.valido.dimensions,
         price: produtos.valido.price,
         quantity: produtos.valido.quantity,
-        description: produtos.valido.description
+        description: produtos.valido.description,
+        status: "Disponível"
       }
 
       cy.cadastrarProduto(produtoCompleto)
 
-      cy.contains(produtoCompleto.name).should('be.visible')
-      cy.contains('.status', 'Disponível').should('be.visible')
+      cy.verificarProduto(produtoCompleto)
     })
   });
 
@@ -87,13 +87,14 @@ describe('Cadastro', () => {
         dimensions: produtos.valido.dimensions,
         price: produtos.valido.price,
         quantity: "0",
-        description: produtos.valido.description
+        description: produtos.valido.description,
+        status: "Indisponível"
       }
 
       cy.cadastrarProduto(produtoCompleto)
 
-      cy.contains(produtoCompleto.name).should('be.visible')
-      cy.contains('.status', 'Indisponível').should('be.visible')
+      cy.verificarProduto(produtoCompleto)
+
     })
   })
 
