@@ -98,6 +98,10 @@ Cypress.Commands.add('verificarProduto', (produto) => {
     cy.contains(produto.name).should('be.visible')
   }
 
+  if(produto.quantidadeEstoque){
+    cy.contains('#products-tbody > tr > :nth-child(8)', produto.quantidadeEstoque).should('be.visible')
+  }
+
   if(produto.status){
     cy.contains('.status', produto.status).should('be.visible')
   }
@@ -114,6 +118,13 @@ Cypress.Commands.add('comprarProduto', (produto) => {
   cy.get('#confirm-buy').click()
 
 })
-Cypress.Commands.add('VerificarMensagemModal', (mensagem) =>{
-  cy.contains('#buy-modal-hint', mensagem).should('be.visible')
+Cypress.Commands.add('verificarMensagemModal', (funcao,mensagem) =>{
+  cy.contains(`#${funcao}-modal-hint`, mensagem).should('be.visible')
+})
+
+Cypress.Commands.add('reabastecerProduto', (quantidade) => {
+  cy.get('[data-action="restock"]').click()
+  cy.get('#restock-quantity').click().clear().type(quantidade)
+  cy.get('#confirm-restock').click()
+  
 })

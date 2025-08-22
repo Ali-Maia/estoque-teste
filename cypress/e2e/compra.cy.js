@@ -53,10 +53,10 @@ describe('Comprar produto', () => {
 
     cy.comprarProduto(produtoComprado)
     cy.verificarProduto(produtoComprado)
-    cy.VerificarMensagemModal('Quantidade em estoque insuficiente.')
+    cy.verificarMensagemModal('buy','Quantidade em estoque insuficiente.')
   })
 
-    it.only('Comprar produto com quantidade inferior a zero não deve permitir a compra do produto no sistema', () => {
+    it('Comprar produto com quantidade inferior a zero não deve permitir a compra do produto no sistema', () => {
     const produtoComprado = {
       quantidadeComprada : -1,
       status: 'Disponível'
@@ -64,7 +64,7 @@ describe('Comprar produto', () => {
 
     cy.comprarProduto(produtoComprado)
     cy.verificarProduto(produtoComprado)
-    cy.VerificarMensagemModal('Informe uma quantidade válida para compra.')
+    cy.verificarMensagemModal('buy','Informe uma quantidade válida para compra.')
   })
 
 })
