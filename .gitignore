@@ -137,3 +137,5 @@ dist
 ### Node Patch ###
 # Serverless Webpack directories
 .webpack/
+
+html-report.html
